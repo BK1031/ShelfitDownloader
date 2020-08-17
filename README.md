@@ -16,10 +16,11 @@ You're going to want to create a `secret.py` file and add your password like so:
 ```python
 password = "@Vcs1031"
 ```
-This project relies on Selenium for Python, so make sure you have that installed. Replace the existing chromedriver directory with your installation directory.
+This project relies on Selenium for Python, so make sure you have that installed. ~~Replace the existing chromedriver directory with your installation directory.~~ The program will now automatically download the latest webdriver for Chrome.
 
 ```python
-driver = webdriver.Chrome(r'/Users/bharat/chromedriver')
+# driver = webdriver.Chrome(r'/Users/bharat/chromedriver')
+driver = webdriver.Chrome(ChromeDriverManager().install())
 ```
 
 Then replace the existing email address with your own (obviously).

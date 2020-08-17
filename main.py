@@ -1,5 +1,6 @@
 import webbrowser
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.keys import Keys
 import requests
 import keyboard
@@ -7,18 +8,19 @@ import urllib
 import time
 from secret import password
 
-bookID = 63178
+bookID = 87272
 
 startPage = 1
-lastPage = 1178
+lastPage = 274
 
 currPage = startPage
 
 loginUrl = "https://dashboard.shelfit.com"
 baseUrl = "https://reader.shelfit.com/active_textbooks/"
 
-driver = webdriver.Chrome(r'/Users/bharat/chromedriver')
-driver.set_window_size(775, 1200)
+# driver = webdriver.Chrome(r'/Users/bharat/chromedriver')
+driver = webdriver.Chrome(ChromeDriverManager().install())
+driver.set_window_size(700, 1200)
 
 driver.get(loginUrl)
 elem = driver.find_element_by_id("username")
